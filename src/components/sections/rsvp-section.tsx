@@ -13,6 +13,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { ConfettiBurst } from "@/components/ui/confetti-burst";
 import { attendanceOptions, rsvpSchema, type RsvpFormValues } from "@/lib/rsvp-schema";
+import { submitRsvp } from "@/lib/web3forms";
 
 type SubmitState =
   | { status: "idle" }
@@ -46,18 +47,19 @@ export function RsvpSection() {
   async function onSubmit(values: RsvpFormValues) {
     setSubmitState({ status: "loading" });
 
-    // Static hosting has no server, so there's no backend to POST to here.
-    // The form is fully wired (validation, confirmation code, confetti) —
-    // to actually receive these submissions, point it at a form backend
-    // (e.g. Web3Forms, Formspree) or a mailto: fallback.
-    console.log("LCV başvurusu:", values);
-    await new Promise((resolve) => setTimeout(resolve, 500));
-
-    setSubmitState({
-      status: "success",
-      confirmationCode: `LCV-${Date.now().toString(36).toUpperCase()}`,
-    });
-    reset();
+    try {
+      await submitRsvp(values);
+      setSubmitState({
+        status: "success",
+        confirmationCode: `LCV-${Date.now().toString(36).toUpperCase()}`,
+      });
+      reset();
+    } catch {
+      setSubmitState({
+        status: "error",
+        message: "Bir sorun oluştu, lütfen tekrar deneyin.",
+      });
+    }
   }
 
   const isSuccess = submitState.status === "success";
