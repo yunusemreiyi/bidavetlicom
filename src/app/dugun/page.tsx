@@ -1,15 +1,25 @@
-import { redirect } from "next/navigation";
+"use client";
+
+import { useEffect } from "react";
 import Link from "next/link";
 import { ArrowLeft, Heart } from "lucide-react";
 
 // Düğün sitesi yayına alındığında NEXT_PUBLIC_WEDDING_SITE_URL ortam
-// değişkenini o adrese ayarlayın; bu sayfa otomatik olarak oraya
-// yönlendirir. Değişken tanımlı değilse aşağıdaki "yakında" ekranı gösterilir.
-export default function DugunPage() {
-  const weddingSiteUrl = process.env.NEXT_PUBLIC_WEDDING_SITE_URL;
+// değişkenini o adrese ayarlayıp yeniden build alın; bu sayfa otomatik
+// olarak oraya yönlendirir. Değişken tanımlı değilse aşağıdaki "yakında"
+// ekranı gösterilir. (Statik export'ta çalışması için yönlendirme
+// istemci tarafında yapılıyor.)
+const WEDDING_SITE_URL = process.env.NEXT_PUBLIC_WEDDING_SITE_URL;
 
-  if (weddingSiteUrl) {
-    redirect(weddingSiteUrl);
+export default function DugunPage() {
+  useEffect(() => {
+    if (WEDDING_SITE_URL) {
+      window.location.replace(WEDDING_SITE_URL);
+    }
+  }, []);
+
+  if (WEDDING_SITE_URL) {
+    return null;
   }
 
   return (

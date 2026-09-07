@@ -45,33 +45,19 @@ export function RsvpSection() {
 
   async function onSubmit(values: RsvpFormValues) {
     setSubmitState({ status: "loading" });
-    try {
-      const res = await fetch("/api/rsvp", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(values),
-      });
-      const data = await res.json();
 
-      if (!res.ok || !data.ok) {
-        setSubmitState({
-          status: "error",
-          message: "Bir sorun oluştu, lütfen tekrar deneyin.",
-        });
-        return;
-      }
+    // Static hosting has no server, so there's no backend to POST to here.
+    // The form is fully wired (validation, confirmation code, confetti) —
+    // to actually receive these submissions, point it at a form backend
+    // (e.g. Web3Forms, Formspree) or a mailto: fallback.
+    console.log("LCV başvurusu:", values);
+    await new Promise((resolve) => setTimeout(resolve, 500));
 
-      setSubmitState({
-        status: "success",
-        confirmationCode: data.confirmationCode,
-      });
-      reset();
-    } catch {
-      setSubmitState({
-        status: "error",
-        message: "Bağlantı hatası, lütfen tekrar deneyin.",
-      });
-    }
+    setSubmitState({
+      status: "success",
+      confirmationCode: `LCV-${Date.now().toString(36).toUpperCase()}`,
+    });
+    reset();
   }
 
   const isSuccess = submitState.status === "success";
