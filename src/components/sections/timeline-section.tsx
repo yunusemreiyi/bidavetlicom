@@ -10,34 +10,34 @@ gsap.registerPlugin(ScrollTrigger);
 
 const program = [
   {
-    time: "18:30",
-    title: "Karşılama & Kokteyl",
-    description: "Canlı müzik eşliğinde karşılama ve networking kokteyli.",
+    time: "09:00",
+    title: "Kayıt & Karşılama",
+    description: "İkramlar eşliğinde karşılama ve networking.",
   },
   {
-    time: "19:30",
+    time: "09:30",
     title: "Açılış Konuşması",
-    description: "Yönetim kurulu tarafından yıl değerlendirmesi ve vizyon.",
+    description: "Yönetim kurulu tarafından gündem ve vizyon paylaşımı.",
   },
   {
-    time: "20:15",
-    title: "Gala Yemeği",
-    description: "Seçkin bir menü eşliğinde akşam yemeği.",
+    time: "10:15",
+    title: "Panel / Söyleşi",
+    description: "Sektör konuklarıyla interaktif panel oturumu.",
   },
   {
-    time: "21:30",
-    title: "Ödül Töreni",
-    description: "Yılın başarılarının kutlandığı ödül seremonisi.",
+    time: "12:00",
+    title: "Networking Molası",
+    description: "İkramlar eşliğinde tanışma ve görüş alışverişi.",
   },
   {
-    time: "22:30",
-    title: "Canlı Performans",
-    description: "Özel konuk sanatçı performansı ve dans.",
+    time: "13:30",
+    title: "Çalıştay / Oturumlar",
+    description: "Konu bazlı grup çalışmaları ve sunumlar.",
   },
   {
-    time: "00:00",
+    time: "17:00",
     title: "Kapanış",
-    description: "Gecenin anılarla dolu şekilde kapanışı.",
+    description: "Değerlendirme ve teşekkür konuşmasıyla kapanış.",
   },
 ];
 
@@ -108,7 +108,7 @@ export function TimelineSection() {
             Program Akışı
           </span>
           <h2 className="mt-3 font-serif text-3xl italic text-ivory sm:text-4xl">
-            Gecenin <span className="gold-shimmer not-italic">akışı</span>
+            Etkinliğin <span className="gold-shimmer not-italic">akışı</span>
           </h2>
         </div>
 

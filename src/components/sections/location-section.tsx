@@ -13,11 +13,11 @@ import {
 import { googleCalendarUrl, icsDataUrl, outlookCalendarUrl } from "@/lib/calendar";
 
 const EVENT = {
-  title: "Kurumsal Gala Gecesi — bidavetli.com",
-  description: "Yıllık kurumsal gala gecemize bekleriz.",
+  title: "Kurumsal Etkinlik — bidavetli.com",
+  description: "Kurumsal etkinliğimize bekleriz.",
   location: "The Grand Hall, İstanbul",
-  start: new Date("2026-11-14T18:30:00"),
-  end: new Date("2026-11-15T00:30:00"),
+  start: new Date("2026-11-14T09:00:00"),
+  end: new Date("2026-11-14T17:00:00"),
 };
 
 export function LocationSection() {
@@ -35,7 +35,8 @@ export function LocationSection() {
           <p className="max-w-md text-sm font-light leading-relaxed text-mist sm:text-base">
             Boğaz manzaralı, tarihi dokusuyla öne çıkan mekânımızda sizi
             ağırlamaktan onur duyarız. Vale hizmeti ve özel misafir girişi
-            mevcuttur.
+            mevcuttur. Toplantı, organizasyon ve söyleşi formatındaki tüm
+            etkinlikler için uygundur.
           </p>
 
           <div className="flex items-center gap-2 text-sm text-mist">
@@ -79,7 +80,7 @@ export function LocationSection() {
                 </a>
                 <a
                   href={icsDataUrl(EVENT)}
-                  download="kurumsal-gala-gecesi.ics"
+                  download="kurumsal-etkinlik.ics"
                   className="flex h-12 items-center justify-between rounded-md border border-line px-4 text-sm text-ivory transition-colors hover:border-gold/50 hover:bg-gold/5"
                 >
                   Apple Takvim (.ics)

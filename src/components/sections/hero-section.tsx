@@ -67,14 +67,14 @@ export function HeroSection() {
           variants={fadeUp}
           className="text-balance font-serif text-5xl font-medium leading-[1.05] text-ivory sm:text-7xl lg:text-8xl"
         >
-          Bir Gecelik <span className="gold-shimmer italic">Mükemmellik</span>
+          Sizi Aramızda <span className="gold-shimmer italic">Görmek İsteriz</span>
         </motion.h1>
 
         <motion.p
           variants={fadeUp}
           className="max-w-xl text-balance text-sm font-light leading-relaxed text-mist sm:text-base"
         >
-          Kurumumuzun yıllık gala gecesine katılımınızı bekliyoruz. Aşağıdan
+          Kurumumuzun düzenlediği etkinliğe katılımınızı bekliyoruz. Aşağıdan
           davetiyenin tüm ayrıntılarına ulaşabilir, katılımınızı bildirebilirsiniz.
         </motion.p>
 

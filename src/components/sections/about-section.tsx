@@ -7,9 +7,9 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const stats = [
-  { value: "01", label: "Gece, Sınırsız Anı" },
+  { value: "01", label: "Özenle Kurgulanmış Etkinlik" },
   { value: "250+", label: "Davetli Kapasitesi" },
-  { value: "6", label: "Saat Süren Deneyim" },
+  { value: "6", label: "Saat Süren Program" },
 ];
 
 export function AboutSection() {
@@ -69,16 +69,16 @@ export function AboutSection() {
             className="max-w-3xl text-balance font-serif text-4xl italic leading-tight text-ivory sm:text-5xl lg:text-6xl"
           >
             Zarafetin ve kurumsal vizyonun{" "}
-            <span className="gold-shimmer not-italic">buluştuğu</span> bir gece
+            <span className="gold-shimmer not-italic">buluştuğu</span> bir etkinlik
           </h2>
           <p
             data-speed="1.1"
             className="max-w-2xl text-balance text-sm font-light leading-relaxed text-mist sm:text-base"
           >
-            Bu yıl düzenlediğimiz gala gecesi; iş ortaklarımızı, ekiplerimizi
-            ve sektörün öncü isimlerini bir araya getiriyor. Özenle
-            kurgulanmış bir akış, seçkin bir mekân ve unutulmaz bir atmosfer
-            sizi bekliyor.
+            Düzenlediğimiz bu etkinlik; iş ortaklarımızı, ekiplerimizi ve
+            sektörün öncü isimlerini bir araya getiriyor. İster bir toplantı,
+            ister bir organizasyon, ister bir söyleşi olsun — özenle
+            kurgulanmış bir akış ve seçkin bir mekân sizi bekliyor.
           </p>
         </div>
 
