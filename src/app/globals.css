@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+:root {
+  --background: #090a0f;
+  --foreground: #f5f3ee;
+
+  --raw-obsidian: #090a0f;
+  --raw-obsidian-soft: #10121a;
+  --raw-obsidian-elevated: #161826;
+  --raw-ink: #0c0e16;
+
+  --raw-gold: #c9a45c;
+  --raw-gold-soft: #e4c98a;
+  --raw-gold-dim: #8a7139;
+
+  --raw-ivory: #f5f3ee;
+  --raw-mist: #a6a8b8;
+  --raw-line: rgba(245, 243, 238, 0.1);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-obsidian: var(--raw-obsidian);
+  --color-obsidian-soft: var(--raw-obsidian-soft);
+  --color-obsidian-elevated: var(--raw-obsidian-elevated);
+  --color-ink: var(--raw-ink);
+
+  --color-gold: var(--raw-gold);
+  --color-gold-soft: var(--raw-gold-soft);
+  --color-gold-dim: var(--raw-gold-dim);
+
+  --color-ivory: var(--raw-ivory);
+  --color-mist: var(--raw-mist);
+  --color-line: var(--raw-line);
+
+  --font-serif: var(--font-display);
+  --font-sans: var(--font-body);
+}
+
+* {
+  border-color: var(--raw-line);
+}
+
+html {
+  background: var(--background);
+  color-scheme: dark;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+::selection {
+  background: var(--raw-gold);
+  color: var(--raw-obsidian);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.gold-shimmer {
+  background: linear-gradient(
+    110deg,
+    var(--raw-gold-dim) 20%,
+    var(--raw-gold-soft) 40%,
+    var(--raw-gold) 60%,
+    var(--raw-gold-dim) 80%
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 6s linear infinite;
+}
+
+.glass {
+  background: rgba(245, 243, 238, 0.04);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(245, 243, 238, 0.1);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--raw-obsidian);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--raw-gold-dim);
+  border-radius: 999px;
+}
