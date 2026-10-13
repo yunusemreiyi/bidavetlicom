@@ -115,8 +115,13 @@ export function LocationSection() {
             <circle cx="220" cy="150" r="14" stroke="#c9a45c" strokeWidth="1" opacity="0.5" />
             <circle cx="220" cy="150" r="24" stroke="#c9a45c" strokeWidth="0.5" opacity="0.3" />
           </svg>
-          <div className="absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 flex-col items-center gap-2">
-            <MapPin className="h-8 w-8 text-gold drop-shadow-[0_0_12px_rgba(201,164,92,0.6)]" strokeWidth={1.5} />
+          <div className="absolute left-1/2 top-1/2 flex -translate-x-1/2 -translate-y-1/2 items-center justify-center">
+            <span className="absolute h-16 w-16 animate-ping rounded-full bg-gold/20" />
+            <span className="absolute h-10 w-10 rounded-full bg-gold/10" />
+            <MapPin
+              className="relative h-8 w-8 text-gold drop-shadow-[0_0_12px_rgba(201,164,92,0.6)]"
+              strokeWidth={1.5}
+            />
           </div>
         </div>
       </div>
